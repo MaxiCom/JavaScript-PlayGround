@@ -98,12 +98,33 @@ console.log(arr2.flat(2));
 console.log(arr2.flat(Infinity));
 // Expected output: [0, 1, 2, 3, 4, 5];
 
+/*
+
+The flat() method is a copying method, meaning it doesn't mutate the original array (this).
+
+It creates a new Array object representing the mutations and return it!
+
+*/
+const arr3 = [
+    1,
+    [
+        2
+    ]
+];
+const arr4 = arr3.flat();
+
+console.log(arr3); // UNCHANGED
+console.log(arr4); // new Array object
+console.log(arr3 === arr4); // Expected: false (Not the same object)
+
+
+
+
+// Example with mutating method??
 
 // Is array = [] is the same as array = new Array()?
 // Is obj = {} is the same as obj = new Object()?
 
-// Does it really create a new array? Or it modifies the existing one?
-// Does it create a new Array instance and return it?
 
 // new keyword? Mandatory?
 
