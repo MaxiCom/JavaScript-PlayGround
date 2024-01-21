@@ -23,3 +23,14 @@ b = {
 };
 
 console.log(b.str)
+
+
+
+
+
+
+// ALTERNATIVE
+
+c = Object.create(a);
+
+console.log(c.str);
