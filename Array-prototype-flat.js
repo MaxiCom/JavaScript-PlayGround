@@ -28,3 +28,83 @@ But where does it point?
 To another pre-instantiated object which is the prototype of all instance of the Array class.
 
 */
+
+/*
+
+Array:
+
+array = new Array();
+or
+array = [];
+
+Sub-Array elements:
+
+array = [
+    [
+        // This is a sub-array element
+        data: 42,
+    ], [
+        // This is a sub-array element
+        data: 515,
+    ]
+];
+*/
+
+
+/*
+
+The flat() method of Array instances creates a new array* with all sub-array elements concatenated into it*
+recursively up to the specified depth*! (
+
+Depth is the array depth:
+
+[*] is depth: 0
+[[*]] is depth: 1
+
+etc...
+
+The default depth of Array.flat() is 1
+
+Array.flat() same as Array.flat(1);
+
+*/
+// Demo: Array.flat()
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat()); // same as arr1.flat(1)
+// Expected output: [0, 1, 2, 3, 4]
+
+const arr2 = [
+    0,
+    1,
+    [
+        2,
+        [
+            3,
+            [
+                4,
+                5,
+            ]
+        ]
+    ]
+];
+
+console.log(arr2.flat()); // same as array.flat(1)
+// Expected output: [0, 1, 2, [3, [4, 5]]];
+
+console.log(arr2.flat(2));
+// Expected output: [0, 1, 2, 3, [4, 5]];
+
+console.log(arr2.flat(Infinity));
+// Expected output: [0, 1, 2, 3, 4, 5];
+
+
+// Is array = [] is the same as array = new Array()?
+// Is obj = {} is the same as obj = new Object()?
+
+// Does it really create a new array? Or it modifies the existing one?
+// Does it create a new Array instance and return it?
+
+// new keyword? Mandatory?
+
+// Infinity??
