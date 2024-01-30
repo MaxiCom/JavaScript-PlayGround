@@ -1,4 +1,4 @@
-// The [] notation is called an array literal
+// The [] notation is called an array literal / array shorthand
 // It is a shorthand way to create an array
 // It allows you to define an array and its elements in a concise manner
 var myArray = [1, 2, 3, 4, 5];
@@ -26,3 +26,24 @@ var arr4 = [];     // Creates an empty array.
 
 // In practice, the array literal [] is more commonly used due to its simplicity and clarity.
 // However, both methods are valid, and the choice between them often depends on the specific use case and personal preference.
+
+
+// They are fundamentally similar.
+// [] is pretty much shortcut for new Array()
+
+// using the array constructor,
+// which really does the same thing (the array constructor gets called behind the scenes for the literal).
+
+// The only time you ever want to use new Array(), and not [],
+// is when you want to have a large, empty array.
+// new Array(100) (the first argument passed into the constructor is the length) is WAY shorter than [,,,,,,,,,,,, //omg too large to fit here].
+//
+// But even that isn’t a biggy. You can always do:
+//
+// var arr = [];
+// arr.length = 100
+// ```
+//
+// And the codes, once again, become virtually synonymous.
+//
+// Personal advice: Use the array literal all the time. It just looks way cooler and saves virtual paper.
