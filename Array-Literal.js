@@ -57,3 +57,19 @@ var arr4 = [];     // Creates an empty array.
 
 
 // Extra commas in array literals
+// If you put two commas in a row in an array literal, the array leaves an empty slot for the unspecified element.
+//
+// The following example creates the fish array:
+
+const fish = ["Lion", , "Angel"];
+// OR
+const fishTmp = ["Lion", undefined, "Angel"];
+
+
+
+
+// ???? DIFF LOGGING
+// When you log this array, you will see:
+console.log(fish[1]);
+// [ 'Lion', undefined, 'Angel' ]
+
