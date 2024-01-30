@@ -55,21 +55,50 @@ var arr4 = [];     // Creates an empty array.
 
 // Array literals create Array objects.
 
-
 // Extra commas in array literals
 // If you put two commas in a row in an array literal, the array leaves an empty slot for the unspecified element.
-//
-// The following example creates the fish array:
 
 const fish = ["Lion", , "Angel"];
 // OR
 const fishTmp = ["Lion", undefined, "Angel"];
 
-
-
-
-// ???? DIFF LOGGING
-// When you log this array, you will see:
 console.log(fish[1]);
+console.log(fishTmp[1]);
+
+// When you log this array, you will see:
+console.log(fish);
+// [ 'Lion', <1 empty item>, 'Angel']
+// Note that the second item is "empty"
+
+// When using array-traversing methods like Array.prototype.map  empty slots are skipped.
+
+console.log(fishTmp);
 // [ 'Lion', undefined, 'Angel' ]
 
+// If you include a trailing comma at the end of the list of elements, the comma is ignored.
+const tmp = [0,];
+console.log(tmp.length);
+// output: 1
+
+//Only the last comma is ignored.
+const tmp1 = [0, , 2,];
+console.log(tmp1.length);
+// output: 3 (not four)
+
+
+
+// Note: Trailing commas (commas at the end) help keep git diffs clean when you have a multi-line array,
+// because appending an item to the end only adds one line, but does not modify the previous line.
+// const myList = [
+//   "home",
+//   "school",
+// + "hospital",
+// ];
+
+// Understanding the behavior of extra commas is important to understanding JavaScript as a language.
+
+// However, when writing your own code, you should explicitly declare the missing elements as undefined,
+const arr1 = [1, undefined, 3];
+
+// or at least insert a comment to highlight its absence. Doing this increases your code's clarity and maintainability.
+const arr2 = [1, /* empty */, 3];
