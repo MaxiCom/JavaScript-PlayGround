@@ -47,3 +47,13 @@ var arr4 = [];     // Creates an empty array.
 // And the codes, once again, become virtually synonymous.
 //
 // Personal advice: Use the array literal all the time. It just looks way cooler and saves virtual paper.
+
+
+// When you create an array using an array literal, it is initialized with the specified values as its elements,
+// and its length is set to the number of arguments specified.
+
+
+// Array literals create Array objects.
+
+
+// Extra commas in array literals
